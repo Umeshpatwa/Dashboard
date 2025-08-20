@@ -23,6 +23,7 @@ import {
 import ChartComponent from './ChartComponent';
 import Sidebar from './Sidebar';
 import StatCard from './StatCard';
+import BackendTest from './BackendTest';
 import './Dashboard.css';
 import './Sidebar.css';
 import './StatCard.css';
@@ -228,6 +229,12 @@ const Dashboard = () => {
           </div>
         </div>
       </main>
+      
+      {/* Backend Connection Test Section */}
+      <div className="dashboard-section">
+        <h2>Backend Connection</h2>
+        <BackendTest />
+      </div>
     </div>
   );
 };

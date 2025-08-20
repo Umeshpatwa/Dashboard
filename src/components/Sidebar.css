@@ -198,6 +198,77 @@
   position: absolute;
 }
 
+/* Submenu styles */
+.nav-section li.has-submenu > .nav-link {
+  position: relative;
+}
+
+.nav-section li.has-submenu > .nav-link .nav-arrow {
+  transition: transform 0.2s ease;
+}
+
+.nav-section li.has-submenu.active > .nav-link .nav-arrow {
+  transform: rotate(90deg);
+}
+
+.nav-section .submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding-left: 0;
+  margin: 0;
+}
+
+.nav-section li.active > .submenu,
+.nav-section li:hover > .submenu {
+  max-height: 500px; /* Adjust based on your submenu content */
+}
+
+.nav-section .submenu li {
+  margin: 0;
+}
+
+.nav-section .submenu a {
+  padding-left: 45px;
+  font-size: 0.9em;
+  opacity: 0.9;
+  border-left: none;
+  position: relative;
+}
+
+.nav-section .submenu a::before {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: var(--text-muted);
+  border-radius: 50%;
+}
+
+.nav-section .submenu li.active a,
+.nav-section .submenu a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.nav-section .submenu li.active a::before {
+  background-color: var(--primary-color);
+}
+
+/* Ensure submenus are visible when parent is active */
+.nav-section li.has-submenu.active > .submenu {
+  max-height: 500px;
+}
+
+/* Collapsed state adjustments */
+.sidebar:not(.open) .submenu {
+  display: none;
+}
+
 .sidebar:not(.open) .logo {
   justify-content: center;
   padding: 0;
